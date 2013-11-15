@@ -1,0 +1,12 @@
+{
+    "name": "shapely"
+  , "version": "0.0.1"
+  , "description": "FFI Bindings to libgeos"
+  , "keywords": ["geos", "geometry"]
+  , "author": "Dane Springmeyer <dane@mapbox.com>"
+  , "repository": { "type": "git", "url": "git://github.com/springmeyer/Shapely.js.git" }
+  , "dependencies": { "ffi": "*", "ref": "*", "ref-struct": "*" }
+  , "main": "index"
+  , "scripts": { "test": "mocha" }
+  , "engines": { "node": "*" }
+}
