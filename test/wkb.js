@@ -2,7 +2,7 @@ var geos = require('../');
 var ref = require('ref');
 var assert = require('assert');
 
-describe('WKT', function() {
+describe('WKB', function() {
     var wkt_reader;
     var wkt_writer;
     var wkb_reader;

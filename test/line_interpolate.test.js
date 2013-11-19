@@ -2,7 +2,7 @@ var geos = require('../');
 var ref = require('ref');
 var assert = require('assert');
 
-describe('Error handling', function() {
+describe('Line Interpolation', function() {
     var wkt_reader;
     var wkt_writer;
 
@@ -19,7 +19,7 @@ describe('Error handling', function() {
         done();
     });
 
-    it('should report errors correctly', function(done) {
+    it('should return point along line', function(done) {
         var line = geos.GEOSWKTReader_read(wkt_reader,"LINESTRING(0 0,1 1,2 2,4 4)");
         var point = geos.GEOSInterpolateNormalized(line,0.5);
         var cstring = geos.GEOSWKTWriter_write(wkt_writer,point);

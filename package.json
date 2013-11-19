@@ -7,6 +7,6 @@
   , "repository": { "type": "git", "url": "git://github.com/springmeyer/Shapely.js.git" }
   , "dependencies": { "ffi": "*", "ref": "*", "ref-struct": "*" }
   , "main": "index"
-  , "scripts": { "test": "mocha" }
+  , "scripts": { "test": "mocha -R spec" }
   , "engines": { "node": "*" }
 }
