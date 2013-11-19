@@ -4,6 +4,7 @@ var Struct = require('ref-struct');
 
 // http://geos.osgeo.org/doxygen/geos__c_8h_source.html
 
+var geos;
 var GEOSGeometry = Struct({});
 var GEOSGeometryPtr = ref.refType(GEOSGeometry);
 var GEOSWKTReader = Struct({});
@@ -52,6 +53,7 @@ var geos = new ffi.Library("libgeos_c", {
         // WKB
         "GEOSWKBReader_create":[GEOSWKBReaderPtr,[ ]],
         "GEOSWKBReader_destroy":["void",[GEOSWKBReaderPtr]],
+        "GEOSWKBReader_read":[GEOSGeometryPtr,[GEOSWKBReaderPtr,ucharPtr,ref.types.size_t]],
         "GEOSWKBWriter_create":[GEOSWKBWriterPtr,[ ]],
         "GEOSWKBWriter_destroy":["void",[GEOSWKBWriterPtr]],
         "GEOSWKBWriter_write":[ucharPtr,[GEOSWKBWriterPtr,GEOSGeometryPtr,sizetPtr]],
@@ -61,10 +63,11 @@ var geos = new ffi.Library("libgeos_c", {
 });
 module.exports = geos;
 
-var error_handler = ffi.Callback('void', ['string','string'],function(arg1,arg2) { throw new Error(arg2); } );
-var warning_handler = ffi.Callback('void', ['string','string'],function(arg1,arg2) { console.log(arg2); } );
-geos.initGEOS(warning_handler,error_handler);
-
+geos.init = function(warning_cb,error_cb) {
+  var warning_handler = ffi.Callback('void', ['string','string'], warning_cb);
+  var error_handler = ffi.Callback('void', ['string','string'], error_cb);
+  geos.initGEOS(warning_handler,error_handler);
+}
 
 process.on('exit',function(code) {
   geos.finishGEOS();
