@@ -1,20 +1,21 @@
 var ffi = require("ffi");
 var ref = require('ref');
 var Struct = require('ref-struct');
+var StrictType = require('ref-strict');
 
 // http://geos.osgeo.org/doxygen/geos__c_8h_source.html
 
 var geos;
-var GEOSGeometry = Struct({});
-var GEOSGeometryPtr = ref.refType(GEOSGeometry);
-var GEOSWKTReader = Struct({});
-var GEOSWKTReaderPtr = ref.refType(GEOSWKTReader);
-var GEOSWKTWriter = Struct({});
-var GEOSWKTWriterPtr = ref.refType(GEOSWKTWriter);
-var GEOSWKBReader = Struct({});
-var GEOSWKBReaderPtr = ref.refType(GEOSWKBReader);
-var GEOSWKBWriter = Struct({});
-var GEOSWKBWriterPtr = ref.refType(GEOSWKBWriter);
+var GEOSGeometry = StrictType(Struct({}));
+var GEOSGeometryPtr = StrictType(ref.refType(GEOSGeometry));
+var GEOSWKTReader = StrictType(Struct({}));
+var GEOSWKTReaderPtr = StrictType(ref.refType(GEOSWKTReader));
+var GEOSWKTWriter = StrictType(Struct({}));
+var GEOSWKTWriterPtr = StrictType(ref.refType(GEOSWKTWriter));
+var GEOSWKBReader = StrictType(Struct({}));
+var GEOSWKBReaderPtr = StrictType(ref.refType(GEOSWKBReader));
+var GEOSWKBWriter = StrictType(Struct({}));
+var GEOSWKBWriterPtr = StrictType(ref.refType(GEOSWKBWriter));
 
 var GEOSGeomTypes = {
   "GEOS_POINT":0,
@@ -32,10 +33,10 @@ var GEOSByteOrders = {
   "GEOS_WKB_NDR":1
 };
 
-var voidPtr = ref.refType(ref.types.void);
-var charPtr = ref.refType(ref.types.char);
-var ucharPtr = ref.refType(ref.types.uchar);
-var sizetPtr = ref.refType(ref.types.size_t);
+var voidPtr = ref.refType(StrictType(ref.types.void));
+var charPtr = ref.refType(StrictType(ref.types.char));
+var ucharPtr = ref.refType(StrictType(ref.types.uchar));
+var sizetPtr = ref.refType(StrictType(ref.types.size_t));
 
 var geos = new ffi.Library("libgeos_c", {
         "GEOSversion": ["string",[]],
