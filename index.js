@@ -18,7 +18,6 @@ lgeos.init = function(warning_cb,error_cb) {
 
 lgeos.init(console.log,function(msg1,msg2) { throw new Error(msg2); });
 
-lgeos.wkt_writer = lgeos.GEOSWKTWriter_create();
 lgeos.wkt_reader = lgeos.GEOSWKTReader_create();
 lgeos.wkt_writer = lgeos.GEOSWKTWriter_create();
 lgeos.wkb_reader = lgeos.GEOSWKBReader_create();
