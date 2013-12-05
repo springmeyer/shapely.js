@@ -1,14 +1,14 @@
-# Shapely.js
+# shapely.js
 
-FFI Bindings to [libgeos](http://trac.osgeo.org/geos/). Inspired by [Shapely in python ](http://toblerity.org/shapely/manual.html).
+FFI Bindings to [libgeos](http://trac.osgeo.org/geos/). Inspired by [Shapely in python](http://toblerity.org/shapely/manual.html).
 
 EXPERIMENTAL ONLY. No current releases.
 
-This module is an investigation in these questions:
+This is an investigation into these questions:
 
- - How feasible is it to develop stable, cross platform, and reasonably fast bindings to a C API using node-ffi, ref, ffi-generation, and node-weak?
- - What does a good Javascript API look like that leverages the power of libgeos but hides the complexity?
- - How much slower is an ffi-based approach than native calls in C++ and pure JS based geometry ops?
+ - How feasible is it to develop stable, cross platform, and reasonably fast node.js bindings to a C API using node-ffi, ref, ffi-generation, and node-weak?
+ - What does a good Javascript API look like that leverages libgeos but hides the complexity?
+ - How does an ffi-based approach perform compared to native calls in C++ or pure JS based geometry ops?
 
 ## Requires
 
@@ -19,8 +19,8 @@ This module is an investigation in these questions:
 
 To install:
 
-    git clone https://github.com/springmeyer/Shapely.js.git
-    cd Shapely.js
+    git clone https://github.com/springmeyer/shapely.js.git
+    cd shapely.js
     npm install
 
 ## Test
