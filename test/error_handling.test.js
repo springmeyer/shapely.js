@@ -3,7 +3,6 @@ var ref = require('ref');
 var assert = require('assert');
 
 describe('Error Handling', function() {
-    var wkt_reader;
     var error_result;
     var warning_result;
 
@@ -11,19 +10,13 @@ describe('Error Handling', function() {
         geos.init(
             function(arg1,arg2) { warning_result = arg2; } ,
             function(arg1,arg2) { error_result = arg2; } );
-        wkt_reader = geos.GEOSWKTReader_create();
-        done();
-    });
-
-    after(function(done) {
-        geos.GEOSWKTReader_destroy(wkt_reader);
         done();
     });
 
     it('should handle errors correctly', function(done) {
         var lineWKT = ref.allocCString("LINESTRING(0 0,");
-        var line = geos.GEOSWKTReader_read(wkt_reader,lineWKT);
-        var line = geos.GEOSWKTReader_read(wkt_reader,lineWKT);
+        var line = geos.GEOSWKTReader_read(geos.wkt_reader,lineWKT);
+        var line = geos.GEOSWKTReader_read(geos.wkt_reader,lineWKT);
         assert.equal(line.isNull(),true);
         assert.equal(error_result,'ParseException: Expected number but encountered end of stream');
         done();
