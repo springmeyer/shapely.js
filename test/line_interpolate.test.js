@@ -20,7 +20,8 @@ describe('Line Interpolation', function() {
     });
 
     it('should return point along line', function(done) {
-        var line = geos.GEOSWKTReader_read(wkt_reader,"LINESTRING(0 0,1 1,2 2,4 4)");
+        var lineWKT = ref.allocCString("LINESTRING(0 0,1 1,2 2,4 4)");
+        var line = geos.GEOSWKTReader_read(wkt_reader,lineWKT);
         var point = geos.GEOSInterpolateNormalized(line,0.5);
         var cstring = geos.GEOSWKTWriter_write(wkt_writer,point);
         var wkt = ref.readCString(cstring);

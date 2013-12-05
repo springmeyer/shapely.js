@@ -20,7 +20,8 @@ describe('WKT', function() {
     });
 
     it('should read a point', function(done) {
-        var point = geos.GEOSWKTReader_read(wkt_reader,"POINT(0 0)");
+        var ptWKT = ref.allocCString("POINT(0 0)");
+        var point = geos.GEOSWKTReader_read(wkt_reader,ptWKT);
         var cstring = geos.GEOSWKTWriter_write(wkt_writer,point);
         var wkt = ref.readCString(cstring);
         assert.equal(wkt,'POINT (0.0000000000000000 0.0000000000000000)');
@@ -30,7 +31,8 @@ describe('WKT', function() {
     });
 
     it('should read a line', function(done) {
-        var line = geos.GEOSWKTReader_read(wkt_reader,"LINESTRING(0 0,1 1,2 2)");
+        var lineWKT = ref.allocCString("LINESTRING(0 0,1 1,2 2)");
+        var line = geos.GEOSWKTReader_read(wkt_reader,lineWKT);
         var cstring = geos.GEOSWKTWriter_write(wkt_writer,line);
         var wkt = ref.readCString(cstring);
         assert.equal(wkt,'LINESTRING (0.0000000000000000 0.0000000000000000, 1.0000000000000000 1.0000000000000000, 2.0000000000000000 2.0000000000000000)');

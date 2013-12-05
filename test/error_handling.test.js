@@ -21,7 +21,9 @@ describe('Error Handling', function() {
     });
 
     it('should handle errors correctly', function(done) {
-        var line = geos.GEOSWKTReader_read(wkt_reader,"LINESTRING(0 0,");
+        var lineWKT = ref.allocCString("LINESTRING(0 0,");
+        var line = geos.GEOSWKTReader_read(wkt_reader,lineWKT);
+        var line = geos.GEOSWKTReader_read(wkt_reader,lineWKT);
         assert.equal(line.isNull(),true);
         assert.equal(error_result,'ParseException: Expected number but encountered end of stream');
         done();

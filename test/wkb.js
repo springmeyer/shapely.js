@@ -26,7 +26,8 @@ describe('WKB', function() {
     });
 
     it('should read a point', function(done) {
-        var point = geos.GEOSWKTReader_read(wkt_reader,"POINT(0 0)");
+        var ptWKT = ref.allocCString("POINT(0 0)");
+        var point = geos.GEOSWKTReader_read(wkt_reader,ptWKT);
         var size = ref.alloc(ref.types.size_t,0);
         var ucharPtr = geos.GEOSWKBWriter_write(wkb_writer,point,size);
         assert.equal(21,ref.deref(size));
@@ -41,7 +42,8 @@ describe('WKB', function() {
     });
 
     it('should read a line', function(done) {
-        var line = geos.GEOSWKTReader_read(wkt_reader,"LINESTRING(0 0,1 1,2 2)");
+        var lineWKT = ref.allocCString("LINESTRING(0 0,1 1,2 2)");
+        var line = geos.GEOSWKTReader_read(wkt_reader,lineWKT);
         var size = ref.alloc(ref.types.size_t,0);
         var ucharPtr = geos.GEOSWKBWriter_write(wkb_writer,line,size);
         assert.equal(57,ref.deref(size));

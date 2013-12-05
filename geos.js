@@ -9,7 +9,7 @@ exports.CONSTANTS = {
 };
 
 var GEOSMessageHandler = exports.GEOSMessageHandler = FFI.Function(ref.types.void, [
-  ref.types.CString,
+  ref.refType(ref.types.char),
 ]);
 var GEOSMessageHandlerPtr = exports.GEOSMessageHandlerPtr = ref.refType(GEOSMessageHandler);
 var GEOSInterruptCallback = exports.GEOSInterruptCallback = voidPtr;
@@ -71,19 +71,19 @@ exports.api = new FFI.Library('libgeos_c', {
     GEOSContextHandle_t,
     GEOSMessageHandler,
   ]],
-  GEOSversion: [ref.types.CString, [
+  GEOSversion: [ref.refType(ref.types.char), [
   ]],
   GEOSGeomFromWKT: [GEOSGeometry, [
-    ref.types.CString,
+    ref.refType(ref.types.char),
   ]],
-  GEOSGeomToWKT: [ref.types.CString, [
+  GEOSGeomToWKT: [ref.refType(ref.types.char), [
     GEOSGeometryPtr,
   ]],
   GEOSGeomFromWKT_r: [GEOSGeometryPtr, [
     GEOSContextHandle_t,
-    ref.types.CString,
+    ref.refType(ref.types.char),
   ]],
-  GEOSGeomToWKT_r: [ref.types.CString, [
+  GEOSGeomToWKT_r: [ref.refType(ref.types.char), [
     GEOSContextHandle_t,
     GEOSGeometryPtr,
   ]],
@@ -1012,38 +1012,38 @@ exports.api = new FFI.Library('libgeos_c', {
   GEOSRelatePattern: [ref.types.char, [
     GEOSGeometryPtr,
     GEOSGeometryPtr,
-    ref.types.CString,
+    ref.refType(ref.types.char),
   ]],
   GEOSRelatePattern_r: [ref.types.char, [
     GEOSContextHandle_t,
     GEOSGeometryPtr,
     GEOSGeometryPtr,
-    ref.types.CString,
+    ref.refType(ref.types.char),
   ]],
-  GEOSRelate: [ref.types.CString, [
+  GEOSRelate: [ref.refType(ref.types.char), [
     GEOSGeometryPtr,
     GEOSGeometryPtr,
   ]],
-  GEOSRelate_r: [ref.types.CString, [
+  GEOSRelate_r: [ref.refType(ref.types.char), [
     GEOSContextHandle_t,
     GEOSGeometryPtr,
     GEOSGeometryPtr,
   ]],
   GEOSRelatePatternMatch: [ref.types.char, [
-    ref.types.CString,
-    ref.types.CString,
+    ref.refType(ref.types.char),
+    ref.refType(ref.types.char),
   ]],
   GEOSRelatePatternMatch_r: [ref.types.char, [
     GEOSContextHandle_t,
-    ref.types.CString,
-    ref.types.CString,
+    ref.refType(ref.types.char),
+    ref.refType(ref.types.char),
   ]],
-  GEOSRelateBoundaryNodeRule: [ref.types.CString, [
+  GEOSRelateBoundaryNodeRule: [ref.refType(ref.types.char), [
     GEOSGeometryPtr,
     GEOSGeometryPtr,
     ref.types.int32,
   ]],
-  GEOSRelateBoundaryNodeRule_r: [ref.types.CString, [
+  GEOSRelateBoundaryNodeRule_r: [ref.refType(ref.types.char), [
     GEOSContextHandle_t,
     GEOSGeometryPtr,
     GEOSGeometryPtr,
@@ -1056,10 +1056,10 @@ exports.api = new FFI.Library('libgeos_c', {
     GEOSContextHandle_t,
     GEOSGeometryPtr,
   ]],
-  GEOSisValidReason: [ref.types.CString, [
+  GEOSisValidReason: [ref.refType(ref.types.char), [
     GEOSGeometryPtr,
   ]],
-  GEOSisValidReason_r: [ref.types.CString, [
+  GEOSisValidReason_r: [ref.refType(ref.types.char), [
     GEOSContextHandle_t,
     GEOSGeometryPtr,
   ]],
@@ -1076,10 +1076,10 @@ exports.api = new FFI.Library('libgeos_c', {
     voidPtr,
     voidPtr,
   ]],
-  GEOSGeomType: [ref.types.CString, [
+  GEOSGeomType: [ref.refType(ref.types.char), [
     GEOSGeometryPtr,
   ]],
-  GEOSGeomType_r: [ref.types.CString, [
+  GEOSGeomType_r: [ref.refType(ref.types.char), [
     GEOSContextHandle_t,
     GEOSGeometryPtr,
   ]],
@@ -1323,7 +1323,7 @@ exports.api = new FFI.Library('libgeos_c', {
   ]],
   GEOSWKTReader_read: [GEOSGeometryPtr, [
     GEOSWKTReaderPtr,
-    ref.types.CString,
+    ref.refType(ref.types.char),
   ]],
   GEOSWKTReader_create_r: [GEOSWKTReaderPtr, [
     GEOSContextHandle_t,
@@ -1335,14 +1335,14 @@ exports.api = new FFI.Library('libgeos_c', {
   GEOSWKTReader_read_r: [GEOSGeometryPtr, [
     GEOSContextHandle_t,
     GEOSWKTReaderPtr,
-    ref.types.CString,
+    ref.refType(ref.types.char),
   ]],
   GEOSWKTWriter_create: [GEOSWKTWriter, [
   ]],
   GEOSWKTWriter_destroy: [ref.types.void, [
     GEOSWKTWriterPtr,
   ]],
-  GEOSWKTWriter_write: [ref.types.CString, [
+  GEOSWKTWriter_write: [ref.refType(ref.types.char), [
     GEOSWKTWriterPtr,
     GEOSGeometryPtr,
   ]],
@@ -1372,7 +1372,7 @@ exports.api = new FFI.Library('libgeos_c', {
     GEOSContextHandle_t,
     GEOSWKTWriterPtr,
   ]],
-  GEOSWKTWriter_write_r: [ref.types.CString, [
+  GEOSWKTWriter_write_r: [ref.refType(ref.types.char), [
     GEOSContextHandle_t,
     GEOSWKTWriterPtr,
     GEOSGeometryPtr,
