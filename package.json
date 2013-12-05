@@ -5,7 +5,7 @@
   , "keywords": ["geos", "geometry"]
   , "author": "Dane Springmeyer <dane@mapbox.com>"
   , "repository": { "type": "git", "url": "git://github.com/springmeyer/Shapely.js.git" }
-  , "dependencies": { "ffi": "*", "ref": "*", "ref-struct": "*" }
+  , "dependencies": { "ffi": "*", "ref": "*", "ref-struct": "*", "ref-array": "*" }
   , "devDependencies": { "mocha": "*" }
   , "main": "index"
   , "scripts": { "test": "mocha -R spec" }
