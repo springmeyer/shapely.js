@@ -1,4 +1,4 @@
-var lgeos = require('./geos.js');
+var lgeos = require('./lib/geos.js');
 var ffi = require('ffi'),
     ArrayType = require('ref-array'),
     Struct = require('ref-struct'),

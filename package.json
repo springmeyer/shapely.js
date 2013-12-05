@@ -9,6 +9,7 @@
                       "ffi-generate": "https://github.com/springmeyer/node-ffi-generate/tarball/master" }
   , "devDependencies": { "mocha": "*" }
   , "main": "index"
-  , "scripts": { "test": "mocha -R spec", "install":"./node_modules/ffi-generate/bin/ffi-generate.js -f /usr/local/include/geos_c.h -l libgeos_c -m api > geos.js" }
+  , "scripts": { "test": "mocha -R spec",
+                 "install": "./node_modules/ffi-generate/bin/ffi-generate.js -f /usr/local/include/geos_c.h -l libgeos_c -m api > ./lib/geos.js" }
   , "engines": { "node": "*" }
 }
