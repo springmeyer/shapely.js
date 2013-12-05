@@ -5,9 +5,10 @@
   , "keywords": ["geos", "geometry"]
   , "author": "Dane Springmeyer <dane@mapbox.com>"
   , "repository": { "type": "git", "url": "git://github.com/springmeyer/Shapely.js.git" }
-  , "dependencies": { "ffi": "*", "ref": "*", "ref-struct": "*", "ref-array": "*" }
+  , "dependencies": { "ffi": "*", "ref": "*", "ref-struct": "*", "ref-array": "*",
+                      "ffi-generate": "https://github.com/springmeyer/node-ffi-generate/tarball/master" }
   , "devDependencies": { "mocha": "*" }
   , "main": "index"
-  , "scripts": { "test": "mocha -R spec" }
+  , "scripts": { "test": "mocha -R spec", "install":"./node_modules/ffi-generate/bin/ffi-generate.js -f /usr/local/include/geos_c.h -l libgeos_c -m api > geos.js" }
   , "engines": { "node": "*" }
 }
