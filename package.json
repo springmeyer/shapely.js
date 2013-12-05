@@ -6,6 +6,7 @@
   , "author": "Dane Springmeyer <dane@mapbox.com>"
   , "repository": { "type": "git", "url": "git://github.com/springmeyer/Shapely.js.git" }
   , "dependencies": { "ffi": "*", "ref": "*", "ref-struct": "*" }
+  , "devDependencies": { "mocha": "*" }
   , "main": "index"
   , "scripts": { "test": "mocha -R spec" }
   , "engines": { "node": "*" }
