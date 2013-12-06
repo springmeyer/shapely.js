@@ -27,9 +27,11 @@ if (library_path) {
 }
 
 cp.execFile(process.execPath, args, function(err, stdout, stderr) {
-    if (err || stderr) {
-        var output = err.message || stderr;
-        console.error(output);
+    if (stderr) {
+        console.error(stderr);
+    }
+    if (err) {
+        console.error(err.message);
         process.exit(-1);
     } else {
         console.log("sucessfully ran ffi-generate");

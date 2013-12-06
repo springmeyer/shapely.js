@@ -9,7 +9,7 @@ before_install:
  - sudo apt-get update -y
 
 install:
- - sudo apt-get install -y libclang1 libgeos-c1 libgeos-dev
+ - sudo apt-get install -y libgeos-c1 libgeos-dev
 
 before_script:
  - wget http://www.llvm.org/releases/3.2/clang+llvm-3.2-x86_64-linux-ubuntu-12.04.tar.gz
