@@ -1,6 +1,6 @@
 # shapely.js
 
-FFI Bindings to [libgeos](http://trac.osgeo.org/geos/). Inspired by [Shapely in python](http://toblerity.org/shapely/manual.html).
+Node.js geometry library. Bindings to [libgeos](http://trac.osgeo.org/geos/) using [node-ffi](https://github.com/rbranson/node-ffi). Inspired by [Shapely in python](http://toblerity.org/shapely/manual.html).
 
 EXPERIMENTAL ONLY. No current releases.
 
@@ -38,7 +38,8 @@ At build time this module automatically generates raw libgeos ffi bindings (in `
 
 ## See also
 
-- Node C++ bindings to libgeos: https://github.com/kashif/node-geos
+- Python ffi bindings to libgeos: http://toblerity.org/shapely/manual.html
 - Ruby ffi bindings to libgeso: https://github.com/dark-panda/ffi-geos
 - Pure JS geometry ops: https://github.com/maxogden/geojson-js-utils
 - Pure JS geometry ops: https://github.com/chelm/shapely.js
+- Node C++ bindings to libgeos: https://github.com/kashif/node-geos
