@@ -10,6 +10,6 @@
   , "devDependencies": { "mocha": "*" }
   , "main": "index"
   , "scripts": { "test": "mocha -R spec",
-                 "install": "./node_modules/ffi-generate/bin/ffi-generate.js -f /usr/local/include/geos_c.h -l libgeos_c -m api > ./lib/geos.js" }
+                 "install": "node generate.js" }
   , "engines": { "node": "*" }
 }

@@ -14,6 +14,7 @@ This is an investigation into these questions:
 
 - Node.js v0.10.x
 - node-gyp [Dependencies](https://github.com/TooTallNate/node-gyp/#installation): python, make, c++ compiler
+- libclang
 
 ## Setup
 
