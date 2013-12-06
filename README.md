@@ -14,7 +14,7 @@ This is an investigation into these questions:
 
 - Node.js v0.10.x
 - node-gyp [Dependencies](https://github.com/TooTallNate/node-gyp/#installation): python, make, c++ compiler
-- libclang
+- libclang - at least llvm-3.2. Latest OS X has this, but linux will likely need upgrade (see .travis.yml for details)
 
 ## Setup
 
