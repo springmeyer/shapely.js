@@ -5,6 +5,10 @@ var ffi = require('ffi'),
     ref = require('ref');
 
 module.exports = lgeos;
+var geometries = require('./lib/geometry.js')
+Object.keys(geometries).forEach(function(key) {
+    module.exports[key] = geometries[key];
+});
 
 Object.keys(lgeos.api).forEach(function(key) {
     lgeos[key] = lgeos.api[key];

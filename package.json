@@ -6,10 +6,11 @@
   , "author": "Dane Springmeyer <dane@mapbox.com>"
   , "repository": { "type": "git", "url": "git://github.com/springmeyer/Shapely.js.git" }
   , "dependencies": { "ffi": "*", "ref": "*", "ref-struct": "*", "ref-array": "*",
-                      "ffi-generate": "https://github.com/springmeyer/node-ffi-generate/tarball/master" }
+                      "ffi-generate": "https://github.com/springmeyer/node-ffi-generate/tarball/master",
+                      "weak": "*" }
   , "devDependencies": { "mocha": "*" }
   , "main": "index"
-  , "scripts": { "test": "mocha -R spec",
+  , "scripts": { "test": "mocha -gc -R spec",
                  "install": "node generate.js" }
   , "engines": { "node": "*" }
 }
