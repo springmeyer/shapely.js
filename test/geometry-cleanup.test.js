@@ -4,7 +4,7 @@ var assert = require('assert');
 var util = require("util");
 var weak = require('weak');
 
-describe('Geometry API', function() {
+describe('Geometry Cleanup', function() {
 
     it('should free geometry ptr inside a Geometry', function(done) {
         destroyed = false;
@@ -19,9 +19,11 @@ describe('Geometry API', function() {
         util.inherits(NewGeomType, BaseGeom);
         NewGeomType.prototype._init = function(coords) {
             this.cs = lgeos.GEOSCoordSeq_create(1, 2);
+            assert.equal(this.cs.isNull(),false);
             lgeos.GEOSCoordSeq_setX(this.cs, 0, coords[0]);
             lgeos.GEOSCoordSeq_setY(this.cs, 0, coords[1]);
             this.geom = lgeos.GEOSGeom_createPoint(this.cs);
+            assert.equal(this.geom.isNull(),false);
             NewGeomType.super_(this.geom);
             weak(this,_cleanup);
         }
