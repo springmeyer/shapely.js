@@ -10,8 +10,12 @@ describe('Geometry Cleanup', function() {
         destroyed = false;
         function _cleanup(o) {
             destroyed = true;
-            lgeos.GEOSCoordSeq_destroy(o.cs);
-            lgeos.GEOSGeom_destroy(o.geom);
+            if (o.geom.isNull()) {
+                lgeos.GEOSCoordSeq_destroy(o.cs);
+            } else {
+                // if geom was created it will have taken ownership of the seq
+                lgeos.GEOSGeom_destroy(o.geom);
+            }
         }
         var NewGeomType = function(coords) {
             this._init(coords);
