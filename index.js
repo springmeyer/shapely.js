@@ -1,8 +1,11 @@
+var path = require('path');
+
+if (process.platform === 'win32') {
+    process.env.PATH = path.join(__dirname,'lib');
+}
+
+var ffi = require('ffi');
 var lgeos = require('./lib/geos.js');
-var ffi = require('ffi'),
-    ArrayType = require('ref-array'),
-    Struct = require('ref-struct'),
-    ref = require('ref');
 
 module.exports = lgeos;
 var geometries = require('./lib/geometry.js')
