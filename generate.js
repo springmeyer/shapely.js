@@ -2,6 +2,11 @@ var cp = require('child_process');
 var existsSync = require('fs').existsSync || require('path').existsSync;
 var fs = require('fs');
 
+if (process.platform === 'win32') {
+    console.log("skipping ffi-generate");
+    process.exit(0);
+}
+
 var args = [
     './node_modules/ffi-generate/bin/ffi-generate.js',
     '-m',
