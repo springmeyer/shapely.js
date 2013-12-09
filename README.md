@@ -24,6 +24,13 @@ To install:
     cd shapely.js
     npm install
 
+On OS X Mavericks (other versions not tested), libclang needs to be added
+to the library path when running npm install:
+
+    git clone https://github.com/springmeyer/shapely.js.git
+    cd shapely.js
+    LD_LIBRARY_PATH=$(dirname $(mdfind -name libclang.dylib)) npm install
+
 ## Test
 
     npm test
@@ -39,7 +46,7 @@ At build time this module automatically generates raw libgeos ffi bindings (in `
 ## See also
 
 - Python ffi bindings to libgeos: http://toblerity.org/shapely/manual.html
-- Ruby ffi bindings to libgeso: https://github.com/dark-panda/ffi-geos
+- Ruby ffi bindings to libgeos: https://github.com/dark-panda/ffi-geos
 - Pure JS geometry ops: https://github.com/maxogden/geojson-js-utils
 - Pure JS geometry ops: https://github.com/chelm/shapely.js
 - Node C++ bindings to libgeos: https://github.com/kashif/node-geos
