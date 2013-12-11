@@ -28,7 +28,7 @@ if (existsSync('/usr/local/include/geos_c.h')) {
 var library_path = process.env.DYLD_LIBRARY_PATH || process.env.LD_LIBRARY_PATH;
 if (library_path) {
     args.push('-L')
-    args.push(process.env.LD_LIBRARY_PATH.split(':')[0])
+    args.push(library_path.split(':')[0])
 }
 
 cp.execFile(process.execPath, args, function(err, stdout, stderr) {
