@@ -14,7 +14,6 @@ This is an investigation into these questions:
 
 - Node.js v0.10.x
 - node-gyp [Dependencies](https://github.com/TooTallNate/node-gyp/#installation): python, make, c++ compiler
-- libclang - at least llvm-3.2. Latest OS X has this, but linux will likely need upgrade (see .travis.yml for details)
 
 ## Setup
 
@@ -39,7 +38,7 @@ At build time this module automatically generates raw libgeos ffi bindings (in `
 ## See also
 
 - Python ffi bindings to libgeos: http://toblerity.org/shapely/manual.html
-- Ruby ffi bindings to libgeso: https://github.com/dark-panda/ffi-geos
+- Ruby ffi bindings to libgeos: https://github.com/dark-panda/ffi-geos
 - Pure JS geometry ops: https://github.com/maxogden/geojson-js-utils
 - Pure JS geometry ops: https://github.com/chelm/shapely.js
 - Node C++ bindings to libgeos: https://github.com/kashif/node-geos
