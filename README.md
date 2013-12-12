@@ -2,6 +2,8 @@
 
 Node.js geometry library. Bindings to [libgeos](http://trac.osgeo.org/geos/) using [node-ffi](https://github.com/rbranson/node-ffi). Inspired by [Shapely in python](http://toblerity.org/shapely/manual.html).
 
+[![Build Status](https://secure.travis-ci.org/springmeyer/shapely.js.png)](https://travis-ci.org/springmeyer/shapely.js)
+
 EXPERIMENTAL ONLY. No current releases.
 
 This is an investigation into these questions:
