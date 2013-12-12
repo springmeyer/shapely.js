@@ -10,7 +10,8 @@ describe('Geometry API', function() {
     });
 
     it('buffer a Point', function(done) {
-        assert.equal(new Point(0,0).buffer(10).area(), 313.6548490545939);
+        var diff = Math.abs(new Point(0,0).buffer(10).area() - 313.6548490545939);
+        assert.ok(diff < 0.0001);
         done();
     });
 
