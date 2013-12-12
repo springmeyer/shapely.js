@@ -5,12 +5,10 @@
   , "keywords": ["geos", "geometry"]
   , "author": "Dane Springmeyer <dane@mapbox.com>"
   , "repository": { "type": "git", "url": "git://github.com/springmeyer/Shapely.js.git" }
-  , "dependencies": { "ffi": "*", "ref": "*", "ref-struct": "*", "ref-array": "*",
-                      "ffi-generate": "https://github.com/springmeyer/node-ffi-generate/tarball/master",
+  , "dependencies": { "ffi": "https://github.com/springmeyer/node-ffi/tarball/master", "ref": "*", "ref-struct": "*", "ref-array": "*",
                       "weak": "*" }
   , "devDependencies": { "mocha": "*" }
   , "main": "index"
-  , "scripts": { "test": "mocha -gc -R spec",
-                 "install": "node generate.js" }
+  , "scripts": { "test": "mocha -gc -R spec" }
   , "engines": { "node": "*" }
 }
