@@ -25,6 +25,13 @@ To install:
     cd shapely.js
     npm install
 
+On OS X Mavericks (other versions not tested), libclang needs to be added
+to the library path when running npm install:
+
+    git clone https://github.com/springmeyer/shapely.js.git
+    cd shapely.js
+    LD_LIBRARY_PATH=$(dirname $(mdfind -name libclang.dylib)) npm install
+
 ## Test
 
     npm test
